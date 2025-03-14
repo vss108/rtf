@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocOnDemand</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .hero { background: #f8f9fa; padding: 50px 0; }
+        .testimonial { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); }
+        .footer { background: #222; color: white; padding: 40px 0; }
+        
+        /* Slow animation effect for carousel */
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 1s ease-in-out; /* Adjusted transition time */
+            border: 5px solid #007bff; /* Blue border */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+        }
+        
+        /* Background styling for image section */
+        .image-section {
+            background: linear-gradient(to right, #eef2f3, #8e9eab); /* Gradient background */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        /* Additional CSS for more effective styling */
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        .features-list li {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 1200px; /* Increased container size */
+            margin: 0 auto;
+        }
+
+        /* Heading Styles */
+        h2 {
+            color: #007bff;
+            font-weight: bold;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Subheading Styles */
+        h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 15px;
+            color: #0d47a1;
+            transition: color 0.3s ease;
+        }
+        h3:hover {
+            color: #007bff;
+        }
+
+        /* Paragraph Styling */
+        p {
+            font-size: 1.1rem;
+            color: #444;
+            max-width: 350px;
+            margin: auto;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        /* Image Styling */
+        .img-fluid {
+            max-width: 200px; /* Adjusted image size */
+            height: 200px;    /* Adjusted image size */
+            border-radius: 12px;
+            border: 3px solid #007bff;
+            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .img-fluid:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Flexbox Layout for Sections */
+        .why-section {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            padding: 40px;
+            border-radius: 12px;
+            border: 3px solid #0d47a1;
+            box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(145deg, #e3f2fd, #bbdefb);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .why-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Feature Box Styling */
+        .feature-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #0d47a1;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">DocOnDemand</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="urgentcare.html">Urgent Care</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Mental Health.html">Mental Health</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About Us.html">About</a></li>
+                    <li class="nav-item"><a class="btn btn-primary" href="Login .html">Log in</a></li>
+                    <li class="nav-item"><a class="btn btn-success ms-2" href="#">Sign up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero text-center">
+        <div class="container image-section">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <!-- Bootstrap Carousel for Image Scrolling with Slow Animation -->
+                    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img1.jpg" class="d-block w-100" alt="Image 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img2.jpg" class="d-block w-100" alt="Image 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img3.jpg" class="d-block w-100" alt="Image 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img4.jpg" class="d-block w-100" alt="Image 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img5.jpg" class="d-block w-100" alt="Image 5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                        <img src="img10.jpeg" class="d-block w-50" style="max-width: 400px;">
+                        <h1>See a Doctor Anytime with Available</h1>
+                    </div>
+                    <p>You don’t have to wait in long lines or travel far to see a doctor. With <strong>DocOnDemand</strong>, you can talk to a <strong>doctor, therapist, or psychiatrist</strong> from your <strong>phone or computer</strong>—anytime, anywhere.</p>
+                    <ul class="features-list">
+                        <li>🚑 <strong>No waiting rooms</strong> – Get medical help from the comfort of your home.</li>
+                        <li>🔒 <strong>Safe and private</strong> – Your information stays secure.</li>
+                        <li>👩‍⚕️ <strong>Expert care, 24/7</strong> – Doctors are available anytime, even at night.</li>
+                        <li>💰 <strong>Affordable</strong> – Many visits are covered by insurance.</li>
+                    </ul>
+                    <p>Whether you have a <strong>cold, stress, or need a check-up</strong>, our <strong>doctors are ready to help</strong>—for kids, adults, and seniors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section Added Below -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Why Choose Doctor On Demand?</h2>
+        <div class="d-flex justify-content-around align-items-start text-center why-section">
+            <!-- 24/7 Availability Section -->
+            <div class="p-4 text-center feature-box">
+                <img src="img12.avif" alt="24/7 Care" class="img-fluid mb-3 rounded">
+                <h3>24/7 Care</h3>
+                <p>Talk to a <strong>doctor, therapist, or psychiatrist</strong> anytime—day or night.</p>
+                <p>No waiting, no travel—get help <strong>365 days a year</strong>.</p>
+            </div>
+
+            <!-- Safe & Private Section -->
+            <div class="p-4 text-center feature-box">
+                <img src="img13.jpg" alt="Safe & Private" class="img-fluid mb-3 rounded">
+                <h3>Safe & Private</h3>
+                <p>Your health details are <strong>secure and confidential</strong>.</p>
+                <p>Speak with <strong>trusted, board-certified doctors</strong>.</p>
+            </div>
+
+            <!-- Easy Appointments Section -->
+            <div class="p-4 text-center feature-box">
+                <img src="img14.webp" alt="Easy Appointments" class="img-fluid mb-3 rounded">
+                <h3>📅 Easy Appointments</h3>
+                <p>Book a consultation in just a few clicks and get connected with a doctor fast.</p>
+                <p>Choose a time that works for you—no long waits or travel needed.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2025 DocOnDemand. All rights reserved.</p>
+            <a href="#" class="text-light">Terms of Service</a> | <a href="#" class="text-light">Privacy Policy</a>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
